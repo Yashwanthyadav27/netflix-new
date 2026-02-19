@@ -210,7 +210,7 @@ app.put('/api/auth/profile', async (req, res) => {
 });
 
 // Serve React app for all other routes (for client-side routing)
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
