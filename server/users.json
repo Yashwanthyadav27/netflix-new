@@ -8,5 +8,15 @@
     "profileName": "Yashwanth27",
     "dateOfBirth": "2004-08-01",
     "createdAt": "2026-02-19T06:29:07.752Z"
+  },
+  {
+    "id": "1771498533304",
+    "email": "yashwanth@gmail.com",
+    "password": "$2b$10$bsxCoINxMn53Id69Lc4NVOSoNvgS6aTXNjhHKo/WFRfLxbTAf6ig6",
+    "mobile": "7204669885",
+    "fullName": "yashh",
+    "profileName": "yashh27",
+    "dateOfBirth": "2026-02-02",
+    "createdAt": "2026-02-19T10:55:33.305Z"
   }
 ]

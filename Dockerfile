@@ -1,4 +1,4 @@
-# Build stage for frontend
+# Build stage
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
@@ -10,16 +10,18 @@ RUN npm run build
 FROM node:20-alpine
 WORKDIR /app
 
-# Copy backend files
-COPY server/ ./server/
+# Copy package files and install production dependencies
 COPY package*.json ./
 RUN npm install --production
 
-# Copy built frontend
+# Copy server files
+COPY server/ ./server/
+
+# Copy built frontend from builder stage
 COPY --from=builder /app/dist ./dist
 
 # Expose port
-EXPOSE 10000
+EXPOSE 5000
 
-# Start both frontend and backend
+# Start the server (serves both API and frontend)
 CMD ["node", "server/index.cjs"]

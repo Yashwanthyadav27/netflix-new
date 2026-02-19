@@ -1,22 +1,12 @@
 services:
   - type: web
-    name: netflix-backend
-    env: node
-    buildCommand: npm install
-    startCommand: node server/index.cjs
+    name: netflix-clone
+    env: docker
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: NODE_ENV
         value: production
       - key: JWT_SECRET
         generateValue: true
       - key: PORT
-        value: 10000
-
-  - type: web
-    name: netflix-frontend
-    env: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://netflix-backend.onrender.com/api
+        value: 5000
