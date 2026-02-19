@@ -18,5 +18,15 @@
     "profileName": "yashh27",
     "dateOfBirth": "2026-02-02",
     "createdAt": "2026-02-19T10:55:33.305Z"
+  },
+  {
+    "id": "1771501667683",
+    "email": "yash@gmail.com",
+    "password": "$2b$10$UfL86n1lP41f5uuhnSASretl4DM8Djz2xXLWX7dfooyM3k7KvLGe2",
+    "mobile": "7204669885",
+    "fullName": "Siddu",
+    "profileName": "Sid20",
+    "dateOfBirth": "2004-08-01",
+    "createdAt": "2026-02-19T11:47:47.684Z"
   }
 ]
