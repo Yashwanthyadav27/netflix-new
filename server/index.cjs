@@ -11,10 +11,13 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175'],
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175', 'https://netflix-frontend.onrender.com'],
   credentials: true
 }));
 app.use(express.json());
+
+// Serve static files from dist folder (for production)
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // Request logging
 app.use((req, res, next) => {
@@ -204,6 +207,11 @@ app.put('/api/auth/profile', async (req, res) => {
     console.error('Profile update error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
+});
+
+// Serve React app for all other routes (for client-side routing)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(PORT, () => {
