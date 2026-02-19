@@ -213,7 +213,7 @@ app.put('/api/auth/profile', async (req, res) => {
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Serve React app for all other routes (SPA fallback)
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 

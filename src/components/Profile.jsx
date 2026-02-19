@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 
-const API_URL = '/api';
+const API_URL = import.meta.env.DEV ? 'http://localhost:5000/api' : '/api';
 
 const Profile = () => {
   const { user, logout } = useAuth();
